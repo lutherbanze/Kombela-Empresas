@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Criação de Empresa - Kombela</title>
+    <!-- Tailwind CSS para um design rápido e moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts para a fonte Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados para imitar o Google Forms com tema verde */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0fdf4; /* Tom de verde um pouco mais claro */
+        }
+        .form-container {
+            max-width: 768px;
+            margin: 2rem auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden; /* Garante que a borda superior não vaze */
+        }
+        .form-title-section {
+            padding: 1.5rem 1.5rem 1rem;
+            border-top: 10px solid #4CAF50; /* Borda verde original mantida */
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .form-section-container {
+            margin: 1rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .form-section-header {
+            padding: 1rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: #fafafa;
+        }
+        .form-question {
+            background-color: white;
+            padding: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .form-question:last-child {
+            border-bottom: none;
+        }
+        .form-question:focus-within {
+            background-color: #f9f9f9;
+        }
+        .input-field {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+            background-color: transparent;
+        }
+        .input-field:focus {
+            border-bottom: 2px solid #4CAF50;
+        }
+        .input-label {
+            color: #3c4043;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .submit-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        .submit-button:hover {
+            background-color: #43A047;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header da Aplicação -->
+    <header class="bg-[#0E8143] text-white p-4 shadow-md">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-2xl font-bold">Kombela</h1>
+        </div>
+    </header>
+
+    <div class="form-container">
+        <!-- Cabeçalho do Formulário -->
+        <div class="form-title-section">
+            <h2 class="text-3xl font-semibold text-gray-800">Ficha de Criação de Empresa</h2>
+            <p class="mt-2 text-gray-600">Formulário de registo para novas empresas na plataforma Kombela.</p>
+        </div>
+
+        <form id="kombela-registration-form" action="https://api.web3forms.com/submit" method="POST" class="p-2">
+            <!-- Replace with your Access Key -->
+            <input type="hidden" name="access_key" value="35dd10d1-36db-4afe-81da-01755aa75876">
+
+            <!-- Container: Informações do Administrador -->
+            <div class="form-section-container">
+                <div class="form-section-header">
+                    <h3 class="text-xl font-semibold text-gray-700">Informações do Administrador</h3>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Nome Completo</label>
+                    <input type="text" name="admin_nome_completo" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Email de Contacto</label>
+                    <input type="email" name="admin_email" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Telemóvel de Contacto Principal</label>
+                    <input type="tel" name="admin_telemovel_principal" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Telemóvel de Contacto Secundário</label>
+                    <input type="tel" name="admin_telemovel_secundario" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Número do Documento Nacional (BI)</label>
+                    <input type="text" name="admin_bi" class="input-field" value="" required>
+                </div>
+            </div>
+
+            <!-- Container: Informações da Empresa -->
+            <div class="form-section-container mt-6">
+                <div class="form-section-header">
+                    <h3 class="text-xl font-semibold text-gray-700">Informações da Empresa</h3>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Nome da Empresa</label>
+                    <input type="text" name="empresa_nome" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Nome Comercial</label>
+                    <input type="text" name="empresa_nome_comercial" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Contacto Telefónico Principal</label>
+                    <input type="tel" name="empresa_contacto_principal" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Contacto Telefónico Secundário</label>
+                    <input type="tel" name="empresa_contacto_secundario" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Email de Contacto</label>
+                    <input type="email" name="empresa_email" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Província</label>
+                    <input type="text" name="empresa_provincia" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Cidade</label>
+                    <input type="text" name="empresa_cidade" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Endereço Físico e Legal</label>
+                    <textarea name="empresa_endereco" class="input-field" rows="3" required></textarea>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Website</label>
+                    <input type="url" name="empresa_website" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Descrição da Empresa</label>
+                    <textarea name="empresa_descricao" class="input-field" rows="4" required></textarea>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Ramo de Atividade</label>
+                    <input type="text" name="empresa_ramo_atividade" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Categorias dos Produtos/Empresa</label>
+                    <input type="text" name="empresa_categorias" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Descrição Curta Publicitária</label>
+                    <textarea name="empresa_descricao_publicitaria" class="input-field" rows="3" required></textarea>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Tipo de Legalidade</label>
+                    <input type="text" name="empresa_tipo_legalidade" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Alvará da Empresa (NUIT)</label>
+                    <input type="text" name="empresa_alvara_nuit" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">BI dos Representantes</label>
+                    <textarea name="empresa_bi_representantes" class="input-field" rows="3" required></textarea>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Nome dos Administradores (Sócios)</label>
+                    <input type="text" name="empresa_socios" class="input-field" value="" required>
+                </div>
+                <div class="form-question">
+                    <label class="input-label">Localização Exata da Empresa (Lat, Lng)</label>
+                    <input type="text" name="empresa_localizacao" class="input-field" placeholder="(a ser preenchida via GPS no app)" required>
+                </div>
+            </div>
+
+            <!-- Nota de Feedback -->
+            <div class="m-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <p class="text-sm text-blue-800">
+                    <strong>Nota:</strong> Após a aprovação do seu registo, receberá um email de feedback no <strong>Email de Contacto</strong> fornecido. Informações e documentos adicionais (como imagens, contratos, etc.) serão solicitados posteriormente.
+                </p>
+            </div>
+
+            <!-- Submissão -->
+            <div class="p-4 flex justify-between items-center">
+                <button type="submit" class="submit-button">Submeter Registo</button>
+                <a href="#" onclick="clearForm(event)" class="text-sm text-green-700 hover:underline">Limpar formulário</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function clearForm(event) {
+            // Previne o comportamento padrão do link (navegar para '#')
+            event.preventDefault();
+            // Encontra o formulário pelo ID e reseta todos os seus campos
+            document.getElementById('kombela-registration-form').reset();
+        }
+    </script>
+
+</body>
+</html>
